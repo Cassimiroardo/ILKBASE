@@ -6,7 +6,7 @@ class Nav extends Component {
     
     logOut(e){
         e.preventDefault()
-        localStorage.removeItem('userToken')
+        localStorage.removeItem('usertoken')
         this.props.history.push(`/`)
     }
     
@@ -16,16 +16,10 @@ class Nav extends Component {
             <Fragment>
             <ul id="nav-mobile" className="right hide-on-med-and-down">
                 <li><a href="#/profile">Perfil</a></li>
-                <li><a href="#/feed">Feed</a></li>
+                <li><a href="#/profile/feed">Feed</a></li>
                 <li><a href="/" onClick={this.logOut.bind(this)}>Log out</a></li>
             </ul>
-            <form>
-                <div class="input-field center-align">
-                    <input id="search" type="search" required/>
-                    <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-                    <i class="material-icons">close</i>
-                </div>
-            </form>
+        
             </Fragment>
         )
 
@@ -40,12 +34,8 @@ class Nav extends Component {
         return (
             <nav className="nav">
                 <div className="nav-wrapper container">
-                <ul id="nav-mobile" className="right hide-on-med-and-down">
-                <li><Link to="/">Home</Link></li>
-                <li><Link to="/login">Logar</Link></li>
-                <li><Link to="/register">Cadastrar-se</Link></li>
-            </ul>
-                        
+                
+                    {localStorage.getItem('usertoken') ? loged : notLoged}        
 
                         <ul id="nav-mobile" className="left hide-on-med-and-down">
                             <li><a href="https://www.facebook.com/KbaseItSolutions/?ref=br_rs"><i className="fab fa-facebook-f"></i></a></li>

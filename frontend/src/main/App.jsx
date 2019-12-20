@@ -1,6 +1,6 @@
 import React ,{ Fragment } from 'react';
 import {HashRouter} from 'react-router-dom'
-import Routes from './Routes'
+import Routes from '../Routes/RoutesHome'
 
 import './App.css';
 import Nav from '../components/templates/Nav'

@@ -1,35 +1,37 @@
 import React, { Component ,Fragment } from 'react'
 import jwt_decode from 'jwt-decode'
+import Routes from '../../Routes/RoutesProfile'
 
 import Aside from './Aside'
-import Competences from './Competences'
-//import Feed from './Feed'
 
 class Profile extends Component {
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         
         this.state = {
             name: '',
             email: '',
 
         }
+
     }
 
-    componentDidMount() {
-        const token = Storage.usertoken
-        const decoded = jwt_decode(token)
-        this.setState ({
-            name: decoded.name,
-            email: decoded.email,
-        })
+        componentDidMount(){
+            const user = localStorage.getItem('usertoken') 
+            const decoded = jwt_decode(user)
+            this.setState({
+                name:decoded.name,
+                email: decoded.email
+            })
+
     }
+
     
     render(){
         return(
     <Fragment>
-        <Aside userNome={this.state.name} userEmail={this.state.email}/>
-        <Competences/>
+        <Aside userName={this.state.name} userEmail={this.state.email}/>
+        <Routes/>
     </Fragment>
         )
     }

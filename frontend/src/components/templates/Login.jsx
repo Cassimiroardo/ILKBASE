@@ -1,16 +1,18 @@
 import React, { Component, Fragment } from 'react'
 import Logo from '../../assets/img/icon.png'
-import '../service/UserFunctions'
 import { login } from '../service/UserFunctions'
 
+//import { login } from '../service/UserFunctions'
+
 class Login extends Component {
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.state = {
             email: '',
             password:''
         }
 
+    
         this.onChange = this.onChange.bind(this)
         this.onSubmit = this.onSubmit.bind(this)
     }
@@ -28,12 +30,11 @@ class Login extends Component {
         }
 
         login(user).then(res => {
-            this.props.history.push("/profile")
+            if(res.erro === 'invalid password') console.log(res.erro)
+            else this.props.history.push('/profile/competences')
         })
-
-    }
-
-
+        
+        }
 
     render() {
 

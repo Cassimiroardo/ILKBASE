@@ -16,13 +16,12 @@ export const register = newUser => {
 export const login = user => {
     return axios
         .post('http://localhost:5000/users/login', {
-            email: user.name,
+            email: user.email,
             password: user.password
         })
-        .then(res => {
-            Storage.setItem('usertoken', res.data)
-            localStorage.setItem('usertoken', res.data)
-            return res.data
+        .then(user  => {
+                localStorage.setItem('usertoken',user.data)
+                return user.data
         })
         .catch(err => {
             console.log(err)

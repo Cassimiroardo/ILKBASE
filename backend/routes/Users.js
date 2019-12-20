@@ -129,6 +129,17 @@ users.get('/name/:name', (req,res) => {
     })
 })
 
+users.get('/email/:email', (req,res) => {
+    User.findOne({ 
+        where: { email: req.params.email }
+    }).then(users => {
+        res.json(users)
+    }).catch(err => {
+        console.log('ERRO!!: \n'+err) 
+        res.send("erro:\n"+err)
+    })
+})
+
 users.put('/edit/:id', (req,res) => {
     User.findOne({
         where: { id: req.params.id }
