@@ -4,7 +4,7 @@ const db = {}
 //configuration of connection with database IL-KBASE
 
 const Sequelize = require('sequelize')
-const sequelize = new Sequelize('I_KBASE','root','dudu142414', {
+const sequelize = new Sequelize('I_KBASE','root','adicione sua senha aqui', {
     host: 'localhost',
     dialect: 'mysql',
     operatorAnaliases: false,
