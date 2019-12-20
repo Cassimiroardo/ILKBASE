@@ -4,7 +4,7 @@ const db = {}
 //configuration of connection with database IL-KBASE
 
 const Sequelize = require('sequelize')
-const sequelize = new Sequelize('IL_KBASE','root','dudu142414', {
+const sequelize = new Sequelize('I_KBASE','root','dudu142414', {
     host: 'localhost',
     dialect: 'mysql',
     operatorAnaliases: false,
@@ -19,7 +19,7 @@ const sequelize = new Sequelize('IL_KBASE','root','dudu142414', {
 
 //authentication
 sequelize.authenticate().then(_ => {
-    console.log("successfully connected to IL-KBASE")
+    console.log("successfully connected to I-KBASE")
 }).catch(err => {
     console.log("FAILED TO CONNECT WITH DATABASE:\n "+err)
 })

@@ -71,7 +71,7 @@ users.post('/login',(req,res) => {
                 res.json({erro: 'invalid password'})
             }
         }else{
-            res.status(400).json({error: 'user does not exist'})
+            res.status(400).json({erro: 'user does not exist'})
         }
     }).catch(err => {
         res.status(400).json({error: err})

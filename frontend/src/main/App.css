@@ -25,7 +25,6 @@
     padding: 0;
 }
 
-
 .App {
     display: grid;
 
@@ -124,5 +123,16 @@ main.main img {
     margin-left: 250px;
     height: 500px;
 }
+
+main.main ul li img {
+    margin-left: 35;
+    height: 35px;
+}
+
+main.main ul li span h6 {
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
 
 

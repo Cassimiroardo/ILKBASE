@@ -15,7 +15,7 @@ class Nav extends Component {
         const loged = (
             <Fragment>
             <ul id="nav-mobile" className="right hide-on-med-and-down">
-                <li><a href="#/profile">Perfil</a></li>
+                <li><a href="#/profile/competences">Perfil</a></li>
                 <li><a href="#/profile/feed">Feed</a></li>
                 <li><a href="/" onClick={this.logOut.bind(this)}>Log out</a></li>
             </ul>

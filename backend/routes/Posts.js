@@ -40,6 +40,17 @@ posts.delete('/dell/:id',(req,res) => {
 })
 
 posts.get('/all', (req,res) => {
+    Post.findAll()
+        .then(posts => {
+            res.json(posts)
+        }).catch(err => {
+            console.log('ERRO!!: \n'+err)
+            res.send(err)
+        })
+})
+
+
+posts.get('/coments', (req,res) => {
     const query = 'SELECT * FROM Posts AS p JOIN Comments AS c ON c.id_post = p.id JOIN Users AS u ON c.id_user = u.id;'
     db.sequelize.query(query, { type: db.Sequelize.QueryTypes.SELECT})
         .then(posts => {
