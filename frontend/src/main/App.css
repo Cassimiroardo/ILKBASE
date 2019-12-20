@@ -1,0 +1,128 @@
+:root {
+    --background: linear-gradient( rgba(79, 74, 74, 1), rgba(18, 15, 15, 1));
+    --blue: rgba(54, 70, 255, 1);
+    --shadows: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+@font-face {
+    font-family: 'RobotoMono-black';
+    src: url('../assets/fonts/RobotoMono-Bold.ttf');
+}
+
+@font-face {
+    font-family: 'RobotoMono-light';
+    src: url('../assets/fonts/RobotoMono-Light.ttf');
+}
+
+@font-face {
+    font-family: 'Barlow';
+    src: url('../assets/fonts/Barlow-Regular.ttf');
+}
+
+* {
+    font-family: 'RobotoMono-light', monospace;
+    margin: 0;
+    padding: 0;
+}
+
+
+.App {
+    display: grid;
+
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 20vh 80vh;
+
+    grid-template-areas: "n n" "a m";
+}
+
+body {
+    background: var(--background);
+}
+
+.user-img {
+    width: 83px;
+    height: 83px;
+}
+
+.nav{
+    background:var(--blue);
+    grid-area: n;
+}
+
+.left li {
+    margin-left: 20px;
+}
+
+aside.aside {
+    grid-area: a;
+    padding: 30px;
+}
+
+aside.aside form {
+    margin: 50px;
+}
+
+aside.aside h1 {
+    margin-left: 50px;
+    font-family: 'RobotoMono-black';
+    font-weight: 900;
+    font-size: 100px;
+    /* or 156% */
+    letter-spacing: 0.055em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    /* TITULOS */
+    text-shadow: var(--shadows)
+}
+
+aside.aside h2 {
+    margin-left: 50px;
+    font-family: 'Barlow';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 100px;
+    /* or 156% */
+    letter-spacing: 0.055em;
+    text-transform: uppercase;
+    color: var(--blue);
+    text-shadow: var(--shadows);
+}
+
+aside.aside h3 {
+    letter-spacing: 0.095em;
+    font-size: 20px;
+    color: #FFFFFF;
+    text-shadow: var(--shadows);
+}
+
+aside.aside div.post-box {
+    padding: 5px;
+    width: 100%;
+    height: 56.01px;
+    background: var(--blue);
+    box-shadow: var(--shadows);
+    border-radius: 45px;
+}
+
+aside.aside div.post-box h3{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    letter-spacing: 0.055em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    font-weight: normal;
+    font-size: 17px;
+    vertical-align: middle
+}
+
+main.main {
+    grid-area: m;
+}
+
+main.main img {
+    margin-left: 250px;
+    height: 500px;
+}
+
+
